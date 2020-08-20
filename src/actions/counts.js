@@ -1,4 +1,4 @@
-import { MINUS, ADD, DIVISION } from "../constants/counts";
+import { MINUS, ADD, DIVIDE, CLEAR } from "../constants/counts";
 
 export const addNumber = (number) => ({
   type: ADD,
@@ -10,7 +10,12 @@ export const minusNumber = (number) => ({
   payload: number,
 });
 
-export const divisionNumber = (number) => ({
-  type: DIVISION,
+export const divideNumber = (number) => ({
+  type: DIVIDE,
+  payload: number,
+});
+
+export const clearNumber = (number) => ({
+  type: CLEAR,
   payload: number,
 });

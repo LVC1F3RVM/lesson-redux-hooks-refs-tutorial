@@ -1,3 +1,4 @@
 export const ADD = "ADD";
 export const MINUS = "MINUS";
-export const DIVISION ="DIVISION";
+export const DIVIDE ="DIVIDE";
+export const CLEAR = "CLEAR";

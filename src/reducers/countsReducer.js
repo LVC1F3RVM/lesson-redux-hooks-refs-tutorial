@@ -1,4 +1,4 @@
-import { MINUS, ADD, DIVISION } from "../constants/counts";
+import { MINUS, ADD, DIVIDE, CLEAR } from "../constants/counts";
 const initialState = 0;
 
 const reducer = (state = initialState, action) => {
@@ -7,8 +7,10 @@ const reducer = (state = initialState, action) => {
       return state + action.payload;
     case MINUS:
       return state - action.payload;
-    case DIVISION:
+    case DIVIDE:
       return state / action.payload;  
+    case CLEAR:
+      return initialState;
     default:
       return state;
   }
