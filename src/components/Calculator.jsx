@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { addNumber, minusNumber } from "../actions/counts";
+import { addNumber, minusNumber, divisionNumber } from "../actions/counts";
 
 function Calculator(props) {
   const [value, setValue] = useState(0);
@@ -10,6 +10,10 @@ function Calculator(props) {
   };
   const handleClickMinus = (e) => {
     props.minus(value);
+  };
+
+  const handleClickDivision = (e) => {
+    props.division(value);
   };
 
   const handleChange = (e) => {
@@ -22,6 +26,7 @@ function Calculator(props) {
       <input value={value} onChange={handleChange} type="number" />
       <button onClick={handleClickAdd}>Add</button>
       <button onClick={handleClickMinus}>Minus</button>
+      <button onClick={handleClickDivision}>Division</button>
     </div>
   );
 }
@@ -30,6 +35,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     add: (number) => dispatch(addNumber(number)),
     minus: (number) => dispatch(minusNumber(number)),
+    division: (number) => dispatch(divisionNumber(number)),
   };
 };
 
