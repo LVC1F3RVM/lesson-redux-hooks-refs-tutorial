@@ -27,10 +27,11 @@ function Calculator(props) {
   return (
     <div>
       <p>Calculator</p>
-      <input value={value} onChange={handleChange} type="number" />
+      <p><input value={value} onChange={handleChange} type="number" /></p>
       <button onClick={handleClickAdd}>Add</button>
       <button onClick={handleClickMinus}>Minus</button>
       <button onClick={handleClickDivide}>Divide</button>
+      <br></br>
       <button onClick={handleClickClear}>Clear</button>
     </div>
   );
