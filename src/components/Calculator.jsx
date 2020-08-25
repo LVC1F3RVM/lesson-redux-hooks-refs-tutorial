@@ -5,8 +5,8 @@ import { addNumber, minusNumber, divideNumber, clearNumber } from "../actions/co
 function Calculator(props) {
   const [value, setValue] = useState(0);
 
-  const handleClickAdd = (e) => {
-    props.add(value);
+  const handleClick = (action) => (e) => {
+    props[action](value);
   };
   const handleClickMinus = (e) => {
     props.minus(value);
@@ -28,8 +28,8 @@ function Calculator(props) {
     <div>
       <p>Calculator</p>
       <p><input value={value} onChange={handleChange} type="number" /></p>
-      <button onClick={handleClickAdd}>Add</button>
-      <button onClick={handleClickMinus}>Minus</button>
+      <button onClick={handleClick("add")}>Add</button>
+      <button onClick={handleClick("minus")}>Minus</button>
       <button onClick={handleClickDivide}>Divide</button>
       <br></br>
       <button onClick={handleClickClear}>Clear</button>
